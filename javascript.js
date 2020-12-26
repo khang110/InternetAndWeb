@@ -169,7 +169,7 @@ $(document).ready(function() {
 });
 
 // tăng giảm Số lượng mua hàng
-var count = 1;
+var count = 0;
 var counter = document.getElementById('value');
 // counter.innerHTML = count;
 function sub() {
@@ -183,21 +183,3 @@ function sum() {
     count++;
     temp.innerHTML = count;
 }
-//  slick carousel
-// $(document).ready(function() {
-//     $('.slider-for').slick({
-//         slidesToShow: 1,
-//         slidesToScroll: 1,
-//         arrows: false,
-//         fade: true,
-//         asNavFor: '.slider-nav'
-//     });
-//     $('.slider-nav').slick({
-//         slidesToShow: 3,
-//         slidesToScroll: 1,
-//         asNavFor: '.slider-for',
-//         dots: true,
-//         centerMode: true,
-//         focusOnSelect: true
-//     });
-// });
