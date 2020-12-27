@@ -1124,7 +1124,7 @@
     /* add animate zoom */
     
     .shoes-picture:hover img {
-        transform: scale(1.5);
+        transform: scale(1.25);
     }
     
     .shoes-picture img {
