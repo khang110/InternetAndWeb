@@ -364,6 +364,11 @@
         border-radius: 0px;
     }
     
+    .call-right-now {
+        color: black;
+        font-weight: bold;
+    }
+    
     .box-shoes .shoes-picture .badge-sale {
         display: inline-block;
         position: absolute;
