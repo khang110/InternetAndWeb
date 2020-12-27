@@ -75,6 +75,11 @@
     .navigation {
         border-top: 1px solid #F1F1F1;
         height: 99px;
+        position: fixed;
+        z-index: 1000;
+        background-color: white;
+        width: 100%;
+        border-bottom: 1px solid whitesmoke;
     }
     
     .navigation .navigation-column.left {
@@ -251,6 +256,10 @@
     }
     /***** slider *****/
     
+    section.slider {
+        margin-top: 99px;
+    }
+    
     .slider .carousel-item {
         height: calc(100vh - 64px);
         background-size: cover;
@@ -339,16 +348,18 @@
         border: 1px solid transparent;
         float: left;
         margin-left: 12px;
+        margin-bottom: 40px;
     }
     
     .box-shoes:hover {
-        border: 1px solid #ccc;
+        /* border: 1px solid #ccc; */
     }
     
     .box-shoes .shoes-picture {
         position: relative;
         z-index: 100;
         padding: 0;
+        overflow: hidden;
     }
     
     .box-shoes .shoes-picture .badge {
@@ -1033,10 +1044,6 @@
         background-color: #ffd600;
     } */
     
-    .active-color {
-        color: white!important;
-    }
-    
     .icon-lh {
         font-size: 60px;
         height: 60px;
@@ -1101,4 +1108,66 @@
     .box-btn-search {
         display: inline-table;
         padding: 32px 0;
+    }
+    
+    section.lienhe {
+        margin-top: 130px;
+    }
+    
+    .wrap-gioithieu {
+        margin-top: 130px;
+    }
+    
+    .wrap-airjordan {
+        margin-top: 99px;
+    }
+    /* add animate zoom */
+    
+    .shoes-picture:hover img {
+        transform: scale(1.5);
+    }
+    
+    .shoes-picture img {
+        transition: transform .5s ease;
+    }
+    /* button back to top */
+    
+    #btn-backtotop {
+        display: inline-block;
+        background-color: #FED700;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        border-radius: 25px;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        transition: background-color .3s, opacity .5s, visibility .5s;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 1000;
+        font-size: 30px;
+    }
+    
+    #btn-backtotop::after {
+        font-family: FontAwesome;
+        font-weight: normal;
+        font-style: normal;
+        line-height: 50px;
+        color: #fff;
+    }
+    
+    #btn-backtotop:hover {
+        cursor: pointer;
+        background-color: #333;
+        color: white;
+    }
+    
+    #btn-backtotop:active {
+        background-color: #555;
+    }
+    
+    #btn-backtotop.show {
+        opacity: 1;
+        visibility: visible;
     }
