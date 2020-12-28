@@ -34,7 +34,7 @@
                     <div class="navigation-column left">
                         <div class="logo">
                             <a href="../index.html">
-                                <img src="../picture/logo.png" alt="">
+                                <img src="../picture/adidas.png" alt="">
                             </a>
                         </div>
                     </div>
@@ -197,9 +197,15 @@
                                 <i class="fas fa-search"></i>
                             </a>
                         </div>
+                        <div class="user-box">
+                            <a href="../login.html">
+                                <ion-icon name="person-outline" id="user-icon-menu"></ion-icon>
+                            </a>
+                        </div>
                         <div class="cart">
-                            <a href="" class="cart-toggle">
-                                <i class="fas fa-shopping-cart"></i>
+                            <a href="index.html" class="cart-toggle">
+                                <!-- <i class="fas fa-shopping-cart"></i> -->
+                                <img src="../picture/cart_ta.png" class="icon-cart" alt="">
                             </a>
                         </div>
                     </div>
@@ -226,11 +232,12 @@
                         <div style="color: rgb(255, 0, 0)">599.000đ</div>
                         <div style="font-size: 15px"><del style="color:rgb(187, 187, 187)">799.000đ</del> | -14%</div>
                     </div>
-                    <div style="margin-top: 10px">
+                    <div style="margin-top: 10px" class="count-product-cart">
                         <button class="bt0 bt-0">-</button>
                         <input class="quantity quantity0" value="1" />
                         <button class="bt0 bt0_">+</button>
                     </div>
+
                 </div>
             </div>
             <div class="product_" id="pr1">
@@ -392,10 +399,8 @@
                     </div>
                     <div class="col-4">
                         <h3>Fanpage</h3>
-                        <iframe id="FB-pc" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FKingshoes.vnn&tabs=timeline&width=440&height=190&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="440"
-                            height="190" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-                        <iframe id="FB-ipad" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FKingshoes.vnn&tabs=timeline&width=215&height=260&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="215"
-                            height="260" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FadidasVN&tabs=timeline&width=400&height=200&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="400" height="200"
+                            style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                     </div>
                 </div>
             </div>
@@ -426,5 +431,6 @@
     </section>
 </body>
 <script src="script.js"></script>
+<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
 
 </html>
