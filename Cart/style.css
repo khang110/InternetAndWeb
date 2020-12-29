@@ -1,93 +1,121 @@
-body{
+body {
     background-color: rgb(197, 197, 197)!important;
 }
-.body-page-cart{
+
+.body-page-cart {
     width: 90%;
     margin: 0 auto;
     margin-top: 120px;
 }
-.wrap-list-chosed{
+
+.wrap-list-chosed {
     background-color: rgb(255, 255, 255);
     flex-grow: 2;
     margin-right: 20px;
     padding-bottom: 20px;
 }
-.bt0{
-    height: 30px; 
+
+.bt0 {
+    height: 30px;
     width: 30px;
-    outline: 0;
+    outline: none!important;
+    border: 1px solid #E1E1E1;
 }
-.image-shoes{
-        height: 130px;
-        width: 130px;
-        margin-right: 20px;
+
+.image-shoes {
+    height: 130px;
+    width: 130px;
+    margin-right: 20px;
 }
-.product_{
-        display:flex;
-        margin-left: 30px;
-        margin-top: 30px;
-        margin-right: 30px;
+
+.product_ {
+    display: flex;
+    margin-left: 30px;
+    margin-top: 30px;
+    margin-right: 30px;
 }
-.info-product{
+
+.info-product {
     flex-grow: 1;
-    font-size: 15px;;
+    font-size: 15px;
+    ;
 }
-.information-customer{
+
+.information-customer {
     padding: 20px 20px 20px 20px;
     margin-bottom: 17px;
     background-color: rgb(255, 255, 255);
     font-family: 'Raleway', sans-serif;
     font-size: 17px;
 }
-.total-cost{
+
+.total-cost {
     color: red;
     font-size: 25px;
     text-align: right;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.text0{
+
+.text0 {
     color: rgb(0, 183, 255);
     flex-grow: 1;
     text-align: right;
 }
-.text1{
+
+.text1 {
     font-size: 17px;
     color: gray;
 }
-.text2{
+
+.text2 {
     font-size: 15px;
     text-align: right;
 }
-.btt-pay{
+
+.btt-pay {
     padding: 15px 15px 15px 15px;
     background-color: #e02137;
     text-align: center;
     font-size: 20px;
     font-family: 'Raleway', sans-serif;
-    font-weight: 700 ;
+    font-weight: 700;
     color: white;
 }
-.btt-pay:hover{
+
+.btt-pay:hover {
     background-color: #e44e4e;
     transition: 0.s;
 }
-.del{
+
+.del {
     margin-right: 40px;
 }
-.del:hover{
-    color:rgb(0, 82, 114);
+
+.del:hover {
+    color: rgb(0, 82, 114);
     transition: 0.4s;
+    cursor: pointer;
 }
+
+.icon-cart {
+    height: 28px;
+    width: auto;
+    filter: invert(1);
+}
+
+.count-product-cart {}
+
+
 /* footer */
-@media (min-width: 1260px)
-{
-    .price_{
+
+@media (min-width: 1260px) {
+    .price_ {
         display: none;
     }
-    .body-page-cart{
+    .body-page-cart {
         display: flex;
     }
-    .wrap-info-customer{
+    .wrap-info-customer {
         flex-grow: 1;
         width: 320px;
         background-color: rgb(197, 197, 197);
@@ -96,47 +124,47 @@ body{
         font-size: 20px;
         font-family: 'Noto Sans JP', sans-serif;
     }
-    .size{
+    .size {
         font-size: 17px;
         font-family: 'Noto Sans JP', sans-serif;
     }
-    .price-quantity{
+    .price-quantity {
         font-size: 18px;
         font-family: 'Noto Sans JP', sans-serif;
         display: flex;
         margin-top: 30px
     }
-    .quantity{
+    .quantity {
         outline: none;
         width: 30px;
         height: 29.5px;
         margin-left: -5px;
         margin-right: -4px;
         text-align: center;
+        border: 1px solid #E1E1E1;
     }
-    .more-action{
+    .more-action {
         font-family: 'Noto Sans JP', sans-serif;
         font-size: 17px;
         color: rgb(36, 172, 250);
         margin-top: 27px;
     }
-    .img-discount{
+    .img-discount {
         margin-right: 10px
     }
 }
 
-@media (max-width: 1259px) and (min-width: 1100px)
-{
-    body{
+@media (max-width: 1259px) and (min-width: 1100px) {
+    body {
         background-color: rgb(197, 197, 197)!important;
     }
-    .price_{
+    .price_ {
         display: none;
     }
-    .body-page-cart{
+    .body-page-cart {
         display: flex;
     }
-    .wrap-info-customer{
+    .wrap-info-customer {
         flex-grow: 1;
         width: 320px;
         background-color: rgb(197, 197, 197);
@@ -145,17 +173,17 @@ body{
         font-size: 15px;
         font-family: 'Noto Sans JP', sans-serif;
     }
-    .size{
+    .size {
         font-size: 13px;
         font-family: 'Noto Sans JP', sans-serif;
     }
-    .price-quantity{
+    .price-quantity {
         font-size: 15px;
         font-family: 'Noto Sans JP', sans-serif;
         display: flex;
         margin-top: 30px
     }
-    .quantity{
+    .quantity {
         outline: none;
         width: 30px;
         height: 29.5px;
@@ -163,25 +191,25 @@ body{
         margin-right: -4px;
         text-align: center;
     }
-    .more-action{
+    .more-action {
         font-family: 'Noto Sans JP', sans-serif;
         font-size: 17px;
         color: rgb(36, 172, 250);
         margin-top: 27px;
     }
-    .img-discount{
+    .img-discount {
         margin-right: 10px
     }
 }
-@media (max-width: 1100px) and (min-width: 750px)
-{
-    .price_{
+
+@media (max-width: 1100px) and (min-width: 750px) {
+    .price_ {
         display: none;
     }
-    .wrap-list-chosed{
+    .wrap-list-chosed {
         padding: 5px 0px 20px 0px;
     }
-    .wrap-info-customer{
+    .wrap-info-customer {
         margin-top: 30px;
         flex-grow: 1;
         width: 98%;
@@ -191,17 +219,17 @@ body{
         font-size: 15px;
         font-family: 'Noto Sans JP', sans-serif;
     }
-    .size{
+    .size {
         font-size: 13px;
         font-family: 'Noto Sans JP', sans-serif;
     }
-    .price-quantity{
+    .price-quantity {
         font-size: 15px;
         font-family: 'Noto Sans JP', sans-serif;
         display: flex;
         margin-top: 30px
     }
-    .quantity{
+    .quantity {
         outline: none;
         width: 30px;
         height: 29.5px;
@@ -209,27 +237,27 @@ body{
         margin-right: -4px;
         text-align: center;
     }
-    .more-action{
+    .more-action {
         font-family: 'Noto Sans JP', sans-serif;
         font-size: 17px;
         color: rgb(36, 172, 250);
         margin-top: 27px;
     }
-    .img-discount{
+    .img-discount {
         margin-right: 10px
     }
 }
-@media (max-width: 750px)
-{
-    .body-page-cart{
+
+@media (max-width: 750px) {
+    .body-page-cart {
         width: 90%;
         margin: 0 auto;
         margin-top: 120px;
     }
-    .wrap-list-chosed{
+    .wrap-list-chosed {
         padding: 20px 0px 20px 0px;
     }
-    .wrap-info-customer{
+    .wrap-info-customer {
         margin-top: 30px;
         flex-grow: 1;
         width: 98%;
@@ -239,14 +267,14 @@ body{
         font-size: 15px;
         font-family: 'Noto Sans JP', sans-serif;
     }
-    .size{
+    .size {
         font-size: 13px;
         font-family: 'Noto Sans JP', sans-serif;
     }
-    .price-quantity{
+    .price-quantity {
         display: none;
     }
-    .quantity{
+    .quantity {
         outline: none;
         width: 30px;
         height: 29.5px;
@@ -254,13 +282,13 @@ body{
         margin-right: -4px;
         text-align: center;
     }
-    .more-action{
+    .more-action {
         font-family: 'Noto Sans JP', sans-serif;
         font-size: 17px;
         color: rgb(36, 172, 250);
         margin-top: 27px;
     }
-    .img-discount{
+    .img-discount {
         margin-right: 10px
     }
 }
