@@ -23,3 +23,5 @@ register.addEventListener("click", function () {
   });
   // Get a list of cities from your database
 });
+
+
