@@ -1,19 +1,11 @@
 import {
-  app,
-  db,
   collection,
+  db,
   getDocs,
-  Timestamp,
-  addDoc,
   query,
-  orderBy,
-  limit,
   where,
-  getFirestore,
-  onSnapshot,
-  getDoc,
-  doc,
-} from "../config/config.js";
+} from '../config/config.js';
+
 let register = document.getElementById("btn-dn");
 register.addEventListener("click", async function () {
   let email = document.getElementById("email").value;
@@ -37,7 +29,7 @@ register.addEventListener("click", async function () {
           "id",
           allData[0].id
         );
-        location.replace("/InternetAndWeb/index.html");
+        location.replace("/index.html");
 
 
         // document.cookie = allData[0]._document.data.value.mapValue.fields;

@@ -1,17 +1,9 @@
 import {
-  app,
-  db,
-  collection,
-  getDocs,
-  Timestamp,
   addDoc,
-  query,
-  orderBy,
-  limit,
-  where,
+  collection,
   getFirestore,
-  onSnapshot,
-} from "../config/config.js";
+} from '../config/config.js';
+
 let register = document.getElementById("btn-dn");
 register.addEventListener("click", function () {
   let email = document.getElementById("email").value;
@@ -25,7 +17,7 @@ register.addEventListener("click", function () {
   addDoc(collection(getFirestore(), "users"), data).then((ref) => {
     if (ref.id){
         window.alert("Bạn đã đăng kí thành công")
-        location.replace("/InternetAndWeb/login.html");
+        location.replace("/login.html");
     }
     // Added doc with ID:  ZzhIgLqELaoE3eSsOazu
   });
