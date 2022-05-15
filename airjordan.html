@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="lib/ionicons-1.5.2/ionicons-1.5.2/css/ionicons.css">
     <link rel="stylesheet" href="lib/fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script type="module" src="config/config.js"></script>
+
 </head>
 
 <body>
@@ -187,7 +189,7 @@
                         </a>
                     </div>
                     <div class="cart">
-                        <a href="Cart/index.html" class="cart-toggle">
+                        <a href="cart.html" class="cart-toggle">
                             <ion-icon name="cart-outline" id="shopping-cart"></ion-icon>
                         </a>
                     </div>
@@ -244,7 +246,7 @@
                             <a href="">JORDAN / AIR JORDAN</a>
                         </h3>
                     </div>
-                    <div class="left-list-jordan"></div>
+                    <div class="left-list-jordan" id="list-products"></div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                     <div class="side-bar">
@@ -355,7 +357,8 @@
     </script>
     <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
     <script src="javascript.js"></script>
-    <script>
+    <!-- <script type="module" src="controller/products.js"></script> -->
+    <script type="module">
         $(document).ready(function() {
             getData();
         });
