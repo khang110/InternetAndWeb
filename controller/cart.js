@@ -19,15 +19,16 @@ import {
   deleteField,
 } from "../config/config.js";
 let idUser = localStorage.getItem("id");
-if (idUser == null){
-    window.alert("Đăng nhập để xem giỏ hàng")
-    location.replace("/InternetAndWeb/login.html");
-
+if (idUser == null) {
+  window.alert("Đăng nhập để xem giỏ hàng");
+  location.replace("/InternetAndWeb/login.html");
 }
 let getdata = query(collection(db, "carts"), where("userID", "==", idUser));
 const querySnapshot = await getDocs(getdata);
 let listID = [];
+let listDB = [];
 await querySnapshot.docs.map(function (ele) {
+  listDB.push(ele.id);
   listID.push(ele._document.data.value.mapValue.fields.productID.stringValue);
 });
 let listData = [];
@@ -66,7 +67,11 @@ function renderDataSomeProduct(data) {
   var html1 = "";
   for (i = 0; i < data.length; i++) {
     html1 +=
-      '<div class="product_" id="pr0">' +
+      '<div class="product_" id="' +
+      i +
+      ' value="' +
+      i +
+      '"">' +
       '<div div class="wrap-img-product" >' +
       '<img src = "' +
       data[i][0]["img-url-1"] +
@@ -79,7 +84,9 @@ function renderDataSomeProduct(data) {
       '<div class="size"> Size: <span style="color:rgb(0, 183, 255)"> &ensp;32</span></ >' +
       '<div class="size">Color: <span style="color:rgb(0, 183, 255)">White</span></div>' +
       '<div class="price_">Price: <span style="color:rgb(224, 0, 0)">599.000đ</span></div>' +
-      '<div class="more-action"><span class="del" id="del0">Xoá</span><span>Để mua sau</span></div>' +
+      '<div class="more-action"><span class="del" id="del0" ><button class="clickMe" id=' +
+      i +
+      ">Xoá</button></span><span>Để mua sau</span></div>" +
       "</div>" +
       '<div class="price-quantity">' +
       '<div style="margin-right: 5px">' +
@@ -92,18 +99,33 @@ function renderDataSomeProduct(data) {
       '<button class="bt0 bt0_">+</button>' +
       "</div>" +
       "</div>" +
-      "</div>"+
+      "</div>" +
       "</div>";
   }
   $(".wrap-list-chosed").html(html1);
   let toalPrice = data.length * 599000;
-  console.log(toalPrice)
+  console.log(toalPrice);
   $(".total-cost").html(toalPrice + " VND");
- 
 }
- $(".btt-pay").click(function(){
-   window.alert("Đặt hàng thành công")
- });
+$(".btt-pay").click(function () {
+  window.alert("Đặt hàng thành công");
+});
+$(".clickMe").click(async function () {
+  console.log(this.id);
+  let idDelete = listDB[this.id];
+  console.log(idDelete);
+  var ref = doc(db, "carts", idDelete);
+  const docSnap = await getDoc(ref)
+  if (!docSnap.exists()){
+    console.log("Not have")
+    return;
+  }
+  await deleteDoc(ref).then(()=>
+  {
+    location.reload();
+  }
+  )
+});
 // $(".bt-0").click(function () {
 //   if ($(".quantity0").val() > 0) {
 //     let temp = $(".quantity0").val();
