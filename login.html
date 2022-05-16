@@ -202,13 +202,38 @@
                 </div>
             </div>
         </section>
+
         <section class="wrap-login" style="margin-top: 130px;">
             <div class="container" id="isForm">
                 <script>
                     let idUser = localStorage.getItem("id");
-                    var html1 
+                    var html1
                     if (idUser != null) {
-                        html1 = '<button id="logout">Bạn đã đăng nhập</button>';
+                        // html1 = '<button class="btn-login" id="logout">Đăng xuất</button>';
+                        html1 = ' <div class="container">' +
+                            '<div class="row">' +
+                            '<div class="col-6">' +
+                            '<div class="author-bio mb-50 bg-white p-30 border-radius-10">' +
+                            '<div class="author-image mb-30">' +
+                            '<a><img src="assets/img/author.jpg" alt="" class="avatar"></a>' +
+                            '<div class="author-info">' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '<div class="col-6">' +
+                            '<h1>Hoang Tuan Anh' +
+                            '</h1>' +
+                             '<div>You should write because you love the shape of stories and sentences and the creation of different words on a page. Graduating from a top accelerator or incubator can be as career-defining for a startup founder as an' +
+                            '</div>' +
+                            '<ul class="header-social-network d-inline-block list-inline color-white mb-20">' +
+                            '<button class="btn-login" id="logout">Đăng xuất</button>' +
+                            '</ul>'
+                        '</div>' +
+                            '</div>' +
+                            '</div>'
+                            ;
+
                     } else {
                         html1 =
                             '<div class="login-form">' +
