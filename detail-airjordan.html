@@ -218,39 +218,10 @@
     </section>
     <section class="wrap-detail-airjordan">
         <div class="container">
-            <div class="row loaddata">
+            <div class="row loaddata" id="detail-container">
                 <!-- <div class="detail-airjordan-product"></div> -->
                 <script>
                     $(document).ready(function () {
-                        var id = GetURLParameter("id");
-                        $.ajax({
-                            url: "https://api.jsonbin.io/b/" + id + "/latest",
-                            method: "GET",
-                            headers: {
-                                "secret-key": "$2b$10$FylrR.yMvOFqIRfe2p8uGOkHAT19.v3Ex2bZBz9feDPpFyEcKSULO"
-                            },
-                            success: function (res) {
-                                renderDataSomeProduct(res);
-                                $('.slider-for').slick({
-                                    slidesToShow: 1,
-                                    slidesToScroll: 1,
-                                    arrows: false,
-                                    fade: true,
-                                    asNavFor: '.slider-nav'
-                                });
-                                $('.slider-nav').slick({
-                                    slidesToShow: 3,
-                                    slidesToScroll: 1,
-                                    asNavFor: '.slider-for',
-                                    dots: true,
-                                    centerMode: true,
-                                    focusOnSelect: true
-                                });
-                            },
-                            error: function (err) {
-                                console.log(err);
-                            }
-                        })
                     });
 
 
@@ -266,96 +237,6 @@
                     }
 
 
-                    function renderDataSomeProduct(data) {
-
-                        var temp = ""
-                        for (var i in data[0]["size"]) {
-                            temp += '<li class="size">' + data[0]["size"][i] + '</li>'
-                        };
-                        var html1 =
-                            '<div class="col-lg-6 col-md-12 col-sm-12">' +
-                            '<div class="slider-for">' +
-                            '<div class="item">' +
-                            '<img src="' + data[0]["img-url-1"] + '" alt="">' +
-                            '</div>' +
-                            '<div class="item">' +
-                            '<img src="' + data[0]["img-url-2"] + '" alt="">' +
-                            '</div>' +
-                            '<div class="item">' +
-                            '<img src="' + data[0]["img-url-3"] + '" alt="">' +
-                            '</div>' +
-                            '<div class="item">' +
-                            '<img src="' + data[0]["img-url-4"] + '" alt="">' +
-                            '</div>' +
-                            '<div class="item">' +
-                            '<img src="' + data[0]["img-url-5"] + '" alt="">' +
-                            '</div>' +
-                            '</div>' +
-                            '<div class="slider-nav">' +
-                            '<div class="item margin-right">' +
-                            '<img class="img-child" src="' + data[0]["img-url-1"] + '" alt="">' +
-                            '</div>' +
-                            '<div class="item margin-right">' +
-                            '<img class="img-child" src="' + data[0]["img-url-2"] + '" alt="">' +
-                            '</div>' +
-                            '<div class="item margin-right">' +
-                            '<img class="img-child" src="' + data[0]["img-url-3"] + '" alt="">' +
-                            '</div>' +
-                            '<div class="item margin-right">' +
-                            '<img class="img-child" src="' + data[0]["img-url-4"] + '" alt="">' +
-                            '</div>' +
-                            '<div class="item margin-right">' +
-                            '<img class="img-child" src="' + data[0]["img-url-5"] + '" alt="">' +
-                            '</div>' +
-                            '</div>' +
-                            '</div>' +
-                            '<div class="col-lg-6 col-md-12 col-sm-12">' +
-                            '<div class="product-info">' +
-                            '<h1 class="info-header">' + data[0]["name"] + '</h1>' +
-                            '<p class="product-category">' +
-                            'Mã SP: ' +
-                            '<strong>' + data[0].id + '</strong>' +
-                            '<h3 class="product-price">9,500,000 VNĐ</h3>' +
-                            '</p>' +
-                            '<div class="product-size">' +
-                            '<span class="choose-size">+Chọn size</span>' +
-                            '<ul class="wraper-size">' + temp +
-                            // '<li class="size">N-US 7 | 40</li>'+
-                            // '<li class="size">N-US 9 | 42.5</li>'+
-                            '</ul>' +
-                            '</div>' +
-                            '<div class="amount">' +
-                            '<div class="block-amount">' +
-                            '<input id="count" type="button" value="-" onclick="sub()">' +
-                            '<p id="value">0</p>' +
-                            '<input id="count" type="button" value="+" onclick="sum()">' +
-                            '</div>' +
-                            '</div>' +
-                            '<div class="button-buy-add">' +
-                            '<div class="row">' +
-                            '<div class="col-6">' +
-                            '<div class="product-shopping-add">' +
-                            '<button id="add-cart">Thêm vào giỏ hàng</button>' +
-                            '</div>' +
-                            '</div>' +
-                            '<div class="col-6">' +
-                            '<div class="product-shopping-buy">' +
-                            '<a href="Cart/index.html"><button id="buy-now">Mua ngay</button></a>' +
-                            '</div>' +
-                            '</div>' +
-                            '</div>' +
-                            '</div>' +
-                            '<div class="block-phone">' +
-                            '<span class="text">Hoặc đặt mua: </span>' +
-                            '<a href="tel: 0971037601" title="Tư vấn đặt hàng: 0971037601">0971037601</a>' +
-                            '</div>' +
-                            '<div class="block-phone freeship">' +
-                            '<strong>Freeship</strong> tại khu vực Hồ Chí Minh' +
-                            '</div>' +
-                            '</div>' +
-                            '</div>';
-                        $('.row.loaddata').html(html1);
-                    }
                 </script>
 
             </div>
@@ -450,7 +331,7 @@
     <script type="text/javascript" src="morefile/jquery-3.5.1.min.js"></script>
     <script type="text/javascript" src="js/slick.min.js"></script>
     <script src="morefile/owl.carousel.min.js"></script>
-    <script src="javascript.js"></script>
+    <script type="module" src="detail.js"></script>
     <script type="module" src="controller/addToCart.js"></script>
 </body>
 

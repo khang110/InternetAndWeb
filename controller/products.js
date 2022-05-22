@@ -65,7 +65,7 @@ function renderData(data) {
       data[i]._document.data.value.mapValue.fields.img_url.stringValue +
       ' alt="">' +
       "</div>" +
-      '<div class="shoes-content">' +
+      '<div >' +
       '<a class="ps-shoe__name" href="detail-airjordan.html?id=' +
       data[i].id +
       '">' +
