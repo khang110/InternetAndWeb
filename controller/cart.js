@@ -78,7 +78,6 @@ renderDataSomeProduct(listData);
 
 let btn_pay = document.getElementById("payment")
 btn_pay.onclick = ()=>{console.log("oke")}
-
 async function renderDataSomeProduct(data) {
   var html1 = "";
   for (let i = 0; i < data.length; i++) {
@@ -126,16 +125,40 @@ async function renderDataSomeProduct(data) {
   console.log(toalPrice);
   $(".total-cost").html(toalPrice + " VND");
   $(".btt-pay").click(async function () {
-    for(let j=0; j<data.length;j++){
-      for(let i=0; i<listID.length;i++){
-        if(listID[i] == data[j].id){
-          var ref = doc(db, "carts", listDB[i]);
-          await deleteDoc(ref)
+    let bill_dom = document.getElementById("bill");
+    let name_dom = document.getElementById("name");
+    let phone_dom = document.getElementById("phone");
+    let address_dom = document.getElementById("address");
+    bill_dom.style.display = 'block';
+    let html = "<div class='wrap-bill'>"
+    html += "<div class='bill-title'> Hóa đơn thanh toán của bạn: </div>"
+    html += "<div>Họ Tên: "+name_dom.value+"</div>"
+    html += "<div>Số điện thoại: " 
+    html += phone_dom.value 
+    html += "</div>"
+    html += "<div>Địa chỉ: " 
+    html += address_dom.value 
+    html += "</div>"
+    html += "<div>Chi tiết đơn hàng: </div>"
+    for (let i = 0; i < data.length; i++) {
+      html += "<div>       " + data[i].name + " - " + data[i].quantity + " đôi </div>"
+    }
+    html += "<div> Tổng thanh toán: " + toalPrice +"đ</div>"
+    html += "<button class='btn btn-success' style='padding-top: 10px' id='confirm-info'> Xác nhận </button>"
+    html += "</div>"
+    bill_dom.innerHTML = html
+    let confirm_dom = document.getElementById("confirm-info")
+    confirm_dom.onclick = async()=>{
+      for(let j=0; j<data.length;j++){
+        for(let i=0; i<listID.length;i++){
+          if(listID[i] == data[j].id){
+            var ref = doc(db, "carts", listDB[i]);
+            await deleteDoc(ref)
+          }
         }
       }
+      location.reload();
     }
-    window.alert("Đặt hàng thành công với số tiền "+ toalPrice+"đ");
-    location.reload();
   });
 
   $(".clickMe").click(async function () {
