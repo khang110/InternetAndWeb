@@ -1,0 +1,21 @@
+.avatar-user{
+    height: 70px;
+    display:inline;
+}
+.name_user{
+    font-size: 15px;
+}
+.contain-user-detail{
+    display: flex;
+    margin-top:20px;
+    margin-left: 30px;
+}
+.user_gmail{
+    margin-left: 100px;
+}
+.avatar-title{
+    margin-left:-0px;
+}
+.table{
+    margin-left: 40px;
+}
