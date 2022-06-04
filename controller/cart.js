@@ -50,7 +50,6 @@ let myArrayWithNoDuplicates = listID.reduce(function (accumulator, element) {
 let getdata_all_shose = query(collection(db, "product"));
 const res = await getDocs(getdata_all_shose);
 let all_shose_data = res.docs
-console.log(all_shose_data)
 myArrayWithNoDuplicates.map(item=>{
   let count = 0
   for(let i=0; i<listID.length; i++){
@@ -77,7 +76,7 @@ let data_render = []
 renderDataSomeProduct(listData);
 
 let btn_pay = document.getElementById("payment")
-btn_pay.onclick = ()=>{console.log("oke")}
+
 async function renderDataSomeProduct(data) {
   var html1 = "";
   for (let i = 0; i < data.length; i++) {
@@ -122,7 +121,6 @@ async function renderDataSomeProduct(data) {
   data.map(item=>{
     toalPrice += item.price*item.quantity*0.9
   })
-  console.log(toalPrice);
   $(".total-cost").html(toalPrice + " VND");
   $(".btt-pay").click(async function () {
     let bill_dom = document.getElementById("bill");
@@ -148,6 +146,13 @@ async function renderDataSomeProduct(data) {
     html += "</div>"
     bill_dom.innerHTML = html
     let confirm_dom = document.getElementById("confirm-info")
+
+    let all_product = query(collection(db, "product"));
+    const all_product_result = await getDocs(all_product);
+    let processed_data = []
+    all_product_result.docs.map(item=>{
+      processed_data.push([item.id, item._document.data.value.mapValue.fields.stock.integerValue])
+    })
     confirm_dom.onclick = async()=>{
       for(let j=0; j<data.length;j++){
         for(let i=0; i<listID.length;i++){
@@ -157,6 +162,30 @@ async function renderDataSomeProduct(data) {
           }
         }
       }
+      let temp = []
+      for (let index = 0; index<data.length; index++){
+        for (let j = 0; j<processed_data.length; j++){
+          if (processed_data[j][0] == data[index].id){
+            let ref = doc(db, 'product', data[index].id)
+            await updateDoc(ref,{
+              stock: parseInt(parseInt(processed_data[j][1])-parseInt(data[index].quantity))}
+            )
+          }
+        }
+        temp.push({
+          product: data[index].id,
+          quantity: data[index].quantity
+        })
+      }
+      let my_data = {
+        user_id: localStorage.getItem("id"),
+        user_name: name_dom.value,
+        phonenumber: phone_dom.value,
+        address: address_dom.value,
+        total_value: toalPrice,
+        detail: temp
+      }
+      addDoc(collection(getFirestore(), "receipt"), my_data);
       location.reload();
     }
   });
