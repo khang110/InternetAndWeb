@@ -957,10 +957,12 @@ p#value {
 
 .product-shopping-add {
     text-align: center;
+    margin-top: 50px;
 }
 
 .product-shopping-buy {
     text-align: center;
+    margin-top: 50px;
 }
 
 button#add-cart {

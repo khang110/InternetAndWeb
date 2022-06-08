@@ -35,7 +35,7 @@ for(let i=0; i<querySnapshot_user.docs.length; i++){
     let html = '<tr><th scope="row">'+i+'</th><td><img src="https://www.interlinecenter.com/wp-content/uploads/2016/10/dummy-user-img.png" class="avatar-user"/></td><td><div class="name_user">'
     html += querySnapshot_user.docs[i]._document.data.value.mapValue.fields.fullname.stringValue + '</div></td><td><span class="name_user">'
     html += querySnapshot_user.docs[i]._document.data.value.mapValue.fields.email.stringValue + '</span></td><td><div class="name_user">'
-    html += querySnapshot_user.docs[i]._document.data.value.mapValue.fields.password.stringValue +'</div></td>'
+    html += '******' +'</div></td>'
     html += '<td><div class="dropdown"><button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Product id</button><div class="dropdown-menu" aria-labelledby="dropdownMenuButton">'
     for(let j = 0; j<querySnapshot_cart.docs.length; j++){
         if(querySnapshot_cart.docs[j]._document.data.value.mapValue.fields.userID.stringValue == querySnapshot_user.docs[i].id){
