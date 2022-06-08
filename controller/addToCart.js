@@ -19,17 +19,21 @@ window.onload = function () {
   let idUser = localStorage.getItem("id");
   var ref = collection(db, "carts");
   register.addEventListener("click", async function () {
-    var productId = GetURLParameter("id"); // id produdct
-    var dataCart = {
-      userID: idUser,
-      productID: productId,
-    };
-    await addDoc(ref, dataCart)
-      .then(() => {
-        window.alert("Thêm vào giỏ hàng thành công");
-      })
-      .catch((error) => {
-        window.alert("errors" + error);
-      });
+    let value = document.getElementById("value")
+    let quantity = parseInt(value.value)
+    for(let i=0; i<quantity; i++){
+      var productId = GetURLParameter("id"); // id produdct
+      var dataCart = {
+        userID: idUser,
+        productID: productId,
+      };
+      await addDoc(ref, dataCart)
+        .then(() => {
+        })
+        .catch((error) => {
+          window.alert("errors" + error);
+        });
+    }
+    window.alert("Thêm vào giỏ hàng thành công");
   });
 };

@@ -70,9 +70,9 @@ var html1 =
     '</div>' +
     '<div class="amount">' +
     '<div class="block-amount">' +
-    '<input id="count" type="button" value="-" onclick="sub()">' +
-    '<p id="value">0</p>' +
-    '<input id="count" type="button" value="+" onclick="sum()">' +
+    '<input id="sub" type="button" value="-">' +
+    '<input id="value" value="0" style="width: 30px;padding-left: 7px;"></input>' +
+    '<input id="sum" type="button" value="+">' +
     '</div>' +
     '</div>' +
     '<div class="button-buy-add">' +
@@ -99,3 +99,21 @@ var html1 =
     '</div>' +
     '</div>';
 HtmlDom.innerHTML =html1
+let sum_btn =  document.getElementById("sum")
+let sub_btn =  document.getElementById("sub")
+let value = document.getElementById("value")
+console.log(my_data.stock)
+sum_btn.addEventListener("click", function () {
+  let current_value = parseInt(value.value)
+  if(current_value < my_data.stock.integerValue){
+    current_value = current_value + 1
+    value.value = current_value
+  }
+})
+sub_btn.addEventListener("click", function () {
+  let current_value = parseInt(value.value)
+  if(current_value !=0){
+    current_value = current_value - 1
+    value.value = current_value
+  }
+})
